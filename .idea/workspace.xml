@@ -38,26 +38,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for Login_test.test_Login_01.executor": "Run",
-    "Python tests.Python tests for Login_test.test_validatemsg_02.executor": "Run",
-    "Python tests.Python tests for hotel_test.test_LoginSuccessful_01.executor": "Run",
-    "Python tests.Python tests for hotel_test.test_Login_01.executor": "Run",
-    "Python tests.Python tests for hotel_test.test_bookaHotel_05.executor": "Run",
-    "Python tests.Python tests for hotel_test.test_searchHotelpage_03.executor": "Run",
-    "Python tests.Python tests for hotel_test.test_selectingHotel_04.executor": "Run",
-    "Python tests.Python tests for hotel_test.test_validatemsg_02.executor": "Run",
-    "Python tests.Python tests for hotel_test.test_verifyingOrderno.executor": "Run",
-    "Python tests.Python tests in Login_test.py.executor": "Run",
-    "Python.Login page.executor": "Run",
-    "Python.LoginPageTest.executor": "Run",
-    "Python.Loginpage (1).executor": "Run",
-    "Python.SearchHotelPage.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for Login_test.test_Login_01.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for Login_test.test_validatemsg_02.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for hotel_test.test_LoginSuccessful_01.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for hotel_test.test_Login_01.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for hotel_test.test_bookaHotel_05.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for hotel_test.test_searchHotelpage_03.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for hotel_test.test_selectingHotel_04.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for hotel_test.test_validatemsg_02.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for hotel_test.test_verifyingOrderno.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in Login_test.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Login page.executor&quot;: &quot;Run&quot;,
+    &quot;Python.LoginPageTest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Loginpage (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.SearchHotelPage.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python tests.Python tests for hotel_test.test_verifyingOrderno">
     <configuration name="Python tests for hotel_test.test_bookaHotel_05" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="pythonProject2" />
