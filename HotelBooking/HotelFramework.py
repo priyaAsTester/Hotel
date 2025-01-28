@@ -49,6 +49,11 @@ def gettingElementText(driver,Xpath):
     element=driver.find_element(By.XPATH,Xpath)
     return element.text
 
+def gettingElementAttribute(driver,Xpath):
+    element=driver.find_element(By.XPATH,Xpath)
+    element_text = element.get_attribute("value")
+    return element_text
+
 
 def alertOk(driver):
     driver.switch_to.alert.accept()

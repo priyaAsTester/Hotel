@@ -1,5 +1,6 @@
 import time
 
+import openpyxl
 import pytest
 from attr.setters import validate
 from openpyxl.workbook import Workbook
@@ -14,7 +15,8 @@ from HotelBooking import SearchHotelPage as sp
 from HotelBooking.BookAHotelPage import PAGENAME, fIRST_NAME, LAST_NAME, ADDRESS, CC_NUM, CC_TYPE, CC_DATE, CC_YEAR, \
     CVV, BOOKNOW_BTN, PROCESSINGTEXT
 from HotelBooking import BookAHotelPage as bh
-from HotelBooking.BookedItineraryPage import SEARCHBOX, CANCELBTN,GO, LOGOUT, BOOKEDITENERY, SEARCHRESULT
+from HotelBooking.BookedItineraryPage import SEARCHBOX, CANCELBTN, GO, LOGOUT, BOOKEDITENERY, SEARCHRESULT, \
+    BOOKEDITENERYBTN, LOGOUTMSG
 from HotelBooking.BookingconfirmationPage import ORDER_NO, BookingConfirmation, My_itinerary, \
     navigationToBookingConfirmationPage
 from HotelBooking.HotelFramework import clickingtheElement
@@ -34,6 +36,7 @@ def login():
     Loginpage.loginApplication(driver,"testerbee","Qwerty123$")
     driver.maximize_window()
 
+#asserting title and url of the page after login
 def test_LoginSuccessful_01(login):
 
     Homepagetitle="Adactin.com - Search Hotel"
@@ -41,46 +44,49 @@ def test_LoginSuccessful_01(login):
     searchpage_url="https://adactinhotelapp.com/HotelAppBuild2/SearchHotel.php"
     assert searchpage_url==driver.current_url
 
-
+#validating username message after login
 def test_validatemsg_02(login):
     sp.welcomeMsgVerification(driver)
 
+#searching hotel based on preferences
 def test_searchHotelpage_03(login):
     location=2
     hotelindex=2
     roomtype=2
     numOfRooms="1"
-    datein="22/01/25"
-    dateout="23/01/25"
+    datein="29/01/25"
+    dateout="30/01/25"
     adultsno="2"
     childno="1"
     username="hello testerbee!"
     sp.typingRequirementforHotel(driver,location,hotelindex,roomtype,numOfRooms,datein,dateout,adultsno,childno)
     fw.verifying_elementText(driver,USERNAME,username)
-    time.sleep(20)
 
+
+#selecting the available hotel
 def test_selectingHotel_04(login):
     location = 2
     hotelindex = 2
     roomtype = 2
     numOfRooms = "1"
-    datein = "22/01/25"
-    dateout = "23/01/25"
+    datein = "29/01/25"
+    dateout = "30/01/25"
     adultsno = "2"
     childno = "1"
     sp.typingRequirementforHotel(driver, location, hotelindex, roomtype, numOfRooms, datein, dateout, adultsno, childno)
-    #time.sleep(50)
     fw.clickingtheElement(driver,HOTEL_RADIOBTN)
     fw.clickingtheElement(driver,CONTINUEBTN)
     fw.isElementPresent(driver,PAGENAME)
 
+
+#booking the hotel with credit card details and fetching the order id and storing it in the excel for future use
 def test_bookaHotel_05(login):
     location = 2
     hotelindex = 2
     roomtype = 2
     numOfRooms = "1"
-    datein = "22/01/25"
-    dateout = "23/01/25"
+    datein = "29/01/25"
+    dateout = "30/01/25"
     adultsno = "2"
     childno = "1"
     sp.typingRequirementforHotel(driver, location, hotelindex, roomtype, numOfRooms, datein, dateout, adultsno, childno)
@@ -97,23 +103,32 @@ def test_bookaHotel_05(login):
     cvv="333"
     bh.BookingaHotel(driver,firstname,lastname,address,creditCard,ccType,ccDate,ccYear,cvv)
     time.sleep(10)
-
-def test_verifyingOrderno(login):
-    text=navigationToBookingConfirmationPage(driver)
+    fw.isElementPresent(driver, BookingConfirmation)
+    fw.isElementPresent(driver, ORDER_NO)
+    text=fw.gettingElementAttribute(driver, ORDER_NO)
     fw.clickingtheElement(driver, My_itinerary)
-    wb = Workbook()
-    ws = wb.active
-    # Write data to the worksheet
-    ws['A1'] = text
-    # Save the workbook to a file
-    wb.save("example.xlsx")
-    fw.passingData(driver, SEARCHBOX, text)
+    wb = openpyxl.Workbook()
+    sheet = wb.active
+    c1 = sheet.cell(column=1, row=1)
+    c1.value = text
+    wb.save("C:\\Users\\sabar\\PycharmProjects\\pythonProject2\\HotelBooking\\demo3.xlsx")
+
+#saved order id in the previous testcase is passed in the searchfield whether it is displayed.
+#after confirming, deleting and logging out of the application
+def test_verifyingOrderno_06(login):
+    fw.clickingtheElement(driver,BOOKEDITENERYBTN)
+    path="C:\\Users\\sabar\\PycharmProjects\\pythonProject2\\HotelBooking\\demo3.xlsx"
+    wb_obj = openpyxl.load_workbook(path)
+    sheet_obj = wb_obj.active
+    cell_obj = sheet_obj.cell(row=1, column=1)
+    fw.passingData(driver, SEARCHBOX, cell_obj.value)
     fw.clickingtheElement(driver, GO)
     fw.isElementPresent(driver,SEARCHRESULT)
     fw.clickingtheElement(driver, CANCELBTN)
     fw.alertOk(driver)
     fw.isElementPresent(driver, SEARCHRESULT)
     fw.clickingtheElement(driver, LOGOUT)
+    fw.isElementPresent(driver,LOGOUTMSG)
 
 
 

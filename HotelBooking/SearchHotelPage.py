@@ -29,8 +29,8 @@ def selectingLocation(driver,index):
 def selectingHotels(driver,index):
     fw.selectByIndex(driver,HOTELS,index)
 
-def selectingRoomtype(driver,text):
-    fw.selectByValue(driver,ROOMTYPE,text)
+def selectingRoomtype(driver,index):
+    fw.selectByIndex(driver,ROOMTYPE,index)
 
 def selectingNumOfRooms(driver,num):
     fw.selectByValue(driver,ROOM_NOS,num)

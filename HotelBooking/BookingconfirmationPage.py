@@ -10,5 +10,5 @@ My_itinerary="//input[@name='my_itinerary']"
 def navigationToBookingConfirmationPage(driver):
     fw.isElementPresent(driver, BookingConfirmation)
     fw.isElementPresent(driver, ORDER_NO)
-    text = fw.gettingElementText(driver, ORDER_NO)
-    return text
+    text = fw.gettingElementAttribute(driver, ORDER_NO)
+
