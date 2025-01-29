@@ -16,6 +16,7 @@ DATE_OUT="//input[@name='datepick_out']"
 ADULTSIN_ROOM="//select[@name='adult_room']"
 CHILDRENIN_ROOM="//select[@name='child_room']"
 SEARCHBTN="//input[@name='Submit']"
+LOGOUTBTN="//a[text()='Logout']"
 
 def welcomeMsgVerification(driver):
     #driver.find_element(By.XPATH, "//input[@name='username_show']")

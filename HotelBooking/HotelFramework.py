@@ -39,8 +39,10 @@ def selectByText(driver,Xpath,value):
 
 def verifying_elementText(driver,Xpath,name1):
     element=driver.find_element(By.XPATH,Xpath)
-    str(element.text).__eq__(name1)
-    assert True
+    if str(element.text).__eq__(name1):
+        assert True
+    else:
+        assert False
 
 def gettingElementText(driver,Xpath):
     element=driver.find_element(By.XPATH,Xpath)

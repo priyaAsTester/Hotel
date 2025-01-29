@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61aa8378-da21-456e-a8d1-ec2aa695eb3a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pythonProject2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking/BookedItineraryPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking/BookedItineraryPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking/HotelFramework.py" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking/HotelFramework.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking/SearchHotelPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking/SearchHotelPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking/demo3.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking/Excel/demo3.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelBooking/hotel_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/HotelBooking/hotel_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,27 +38,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for Login_test.test_Login_01.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for Login_test.test_validatemsg_02.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for hotel_test.test_LoginSuccessful_01.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for hotel_test.test_Login_01.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for hotel_test.test_bookaHotel_05.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for hotel_test.test_searchHotelpage_03.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for hotel_test.test_selectingHotel_04.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for hotel_test.test_validatemsg_02.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for hotel_test.test_verifyingOrderno.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in Login_test.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Login page.executor&quot;: &quot;Run&quot;,
-    &quot;Python.LoginPageTest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Loginpage (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.SearchHotelPage.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for Login_test.test_Login_01.executor": "Run",
+    "Python tests.Python tests for Login_test.test_validatemsg_02.executor": "Run",
+    "Python tests.Python tests for hotel_test.test_LoginSuccessful_01.executor": "Run",
+    "Python tests.Python tests for hotel_test.test_Login_01.executor": "Run",
+    "Python tests.Python tests for hotel_test.test_bookaHotel_05.executor": "Run",
+    "Python tests.Python tests for hotel_test.test_searchHotelpage_03.executor": "Run",
+    "Python tests.Python tests for hotel_test.test_selectingHotel_04.executor": "Run",
+    "Python tests.Python tests for hotel_test.test_validatemsg_02.executor": "Run",
+    "Python tests.Python tests for hotel_test.test_verifyingOrderno.executor": "Run",
+    "Python tests.Python tests for hotel_test.test_verifyingOrderno_06.executor": "Run",
+    "Python tests.Python tests in Login_test.py.executor": "Run",
+    "Python tests.Python tests in hotel_test.py.executor": "Run",
+    "Python.Login page.executor": "Run",
+    "Python.LoginPageTest.executor": "Run",
+    "Python.Loginpage (1).executor": "Run",
+    "Python.SearchHotelPage.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "sabaripriya"
   }
-}</component>
-  <component name="RunManager" selected="Python tests.Python tests for hotel_test.test_verifyingOrderno">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sabar\PycharmProjects\pythonProject2\HotelBooking\Excel" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for hotel_test.test_verifyingOrderno_06">
     <configuration name="Python tests for hotel_test.test_bookaHotel_05" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="pythonProject2" />
       <option name="ENV_FILES" value="" />
@@ -104,7 +111,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for hotel_test.test_validatemsg_02" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for hotel_test.test_verifyingOrderno_06" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="pythonProject2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,11 +122,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;hotel_test.test_validatemsg_02&quot;" />
+      <option name="_new_target" value="&quot;hotel_test.test_verifyingOrderno_06&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for hotel_test.test_verifyingOrderno" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in hotel_test.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="pythonProject2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,17 +137,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;hotel_test.test_verifyingOrderno&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/HotelBooking/hotel_test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for hotel_test.test_verifyingOrderno" />
+        <item itemvalue="Python tests.Python tests for hotel_test.test_verifyingOrderno_06" />
         <item itemvalue="Python tests.Python tests for hotel_test.test_bookaHotel_05" />
+        <item itemvalue="Python tests.Python tests in hotel_test.py" />
         <item itemvalue="Python tests.Python tests for hotel_test.test_selectingHotel_04" />
         <item itemvalue="Python tests.Python tests for hotel_test.test_searchHotelpage_03" />
-        <item itemvalue="Python tests.Python tests for hotel_test.test_validatemsg_02" />
       </list>
     </recent_temporary>
   </component>
@@ -162,15 +169,15 @@
     </task>
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/HotelBooking/hotel_test.py</url>
-          <line>50</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

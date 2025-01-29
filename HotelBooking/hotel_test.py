@@ -2,6 +2,7 @@ import time
 
 import openpyxl
 import pytest
+import os
 from attr.setters import validate
 from openpyxl.workbook import Workbook
 from selenium.webdriver.common.by import By
@@ -16,18 +17,18 @@ from HotelBooking.BookAHotelPage import PAGENAME, fIRST_NAME, LAST_NAME, ADDRESS
     CVV, BOOKNOW_BTN, PROCESSINGTEXT
 from HotelBooking import BookAHotelPage as bh
 from HotelBooking.BookedItineraryPage import SEARCHBOX, CANCELBTN, GO, LOGOUT, BOOKEDITENERY, SEARCHRESULT, \
-    BOOKEDITENERYBTN, LOGOUTMSG
+    BOOKEDITENERYBTN, LOGOUTMSG, CHECKALL
 from HotelBooking.BookingconfirmationPage import ORDER_NO, BookingConfirmation, My_itinerary, \
     navigationToBookingConfirmationPage
 from HotelBooking.HotelFramework import clickingtheElement
-from HotelBooking.SearchHotelPage import SEARCHBTN, LOCATION
+from HotelBooking.SearchHotelPage import SEARCHBTN, LOCATION, LOGOUTBTN
 from HotelBooking.SelectHotelPage import USERNAME, HOTEL_RADIOBTN, CONTINUEBTN
 from HotelBooking import SelectHotelPage
 from openpyxl import workbook
 
-#checking the login functionality of the Adactin Hotel
 
-@pytest.fixture
+
+@pytest.fixture #checking the login functionality of the Adactin Hotel
 def login():
     global driver
     url = "https://adactinhotelapp.com/HotelAppBuild2/index.php"
@@ -36,20 +37,20 @@ def login():
     Loginpage.loginApplication(driver,"testerbee","Qwerty123$")
     driver.maximize_window()
 
-#asserting title and url of the page after login
-def test_LoginSuccessful_01(login):
+
+def test_LoginSuccessful_01(login):#asserting title and url of the page after login
 
     Homepagetitle="Adactin.com - Search Hotel"
     assert Homepagetitle==driver.title
     searchpage_url="https://adactinhotelapp.com/HotelAppBuild2/SearchHotel.php"
     assert searchpage_url==driver.current_url
 
-#validating username message after login
-def test_validatemsg_02(login):
+
+def test_validatemsg_02(login):#validating username message after login
     sp.welcomeMsgVerification(driver)
 
-#searching hotel based on preferences
-def test_searchHotelpage_03(login):
+
+def test_searchHotelpage_03(login):#searching hotel based on preferences
     location=2
     hotelindex=2
     roomtype=2
@@ -63,8 +64,8 @@ def test_searchHotelpage_03(login):
     fw.verifying_elementText(driver,USERNAME,username)
 
 
-#selecting the available hotel
-def test_selectingHotel_04(login):
+
+def test_selectingHotel_04(login):#selecting the available hotel
     location = 2
     hotelindex = 2
     roomtype = 2
@@ -76,11 +77,11 @@ def test_selectingHotel_04(login):
     sp.typingRequirementforHotel(driver, location, hotelindex, roomtype, numOfRooms, datein, dateout, adultsno, childno)
     fw.clickingtheElement(driver,HOTEL_RADIOBTN)
     fw.clickingtheElement(driver,CONTINUEBTN)
-    #fw.isElementPresent(driver,PAGENAME)
+    fw.isElementPresent(driver,PAGENAME)
 
 
-#booking the hotel with credit card details and fetching the order id and storing it in the excel for future use
-def test_bookaHotel_05(login):
+
+def test_bookaHotel_05(login):#booking the hotel with credit card details and fetching the order id and storing it in the excel for next testcase
     location = 2
     hotelindex = 2
     roomtype = 2
@@ -92,7 +93,6 @@ def test_bookaHotel_05(login):
     sp.typingRequirementforHotel(driver, location, hotelindex, roomtype, numOfRooms, datein, dateout, adultsno, childno)
     fw.clickingtheElement(driver, HOTEL_RADIOBTN)
     fw.clickingtheElement(driver, CONTINUEBTN)
-    #fw.isElementPresent(driver, PAGENAME)
     firstname="priya"
     lastname="srinivasan"
     address="12th street,gandhipuram,Kelambakkam"
@@ -111,13 +111,14 @@ def test_bookaHotel_05(login):
     sheet = wb.active
     c1 = sheet.cell(column=1, row=1)
     c1.value = text
-    wb.save("C:\\Users\\Priya\\pythonProject2\\Hotel\\HotelBooking\\demo3.xlsx")
+    wb.save(os.path.join(os.path.dirname(__file__),"Excel","demo3.xlsx"))
+
+
 
 #saved order id in the previous testcase is passed in the searchfield whether it is displayed.
-#after confirming, deleting and logging out of the application
-def test_verifyingOrderno_06(login):
+def test_verifyingOrderno_06(login):#checking booking order id is found while searching in search fieldpu
     fw.clickingtheElement(driver,BOOKEDITENERYBTN)
-    path="C:\\Users\\Priya\\pythonProject2\\Hotel\\HotelBooking\\demo3.xlsx"
+    path= os.path.join(os.path.dirname(__file__),"Excel","demo3.xlsx")
     wb_obj = openpyxl.load_workbook(path)
     sheet_obj = wb_obj.active
     cell_obj = sheet_obj.cell(row=1, column=1)
@@ -127,8 +128,18 @@ def test_verifyingOrderno_06(login):
     fw.clickingtheElement(driver, CANCELBTN)
     fw.alertOk(driver)
     fw.isElementPresent(driver, SEARCHRESULT)
-    fw.clickingtheElement(driver, LOGOUT)
-    fw.isElementPresent(driver,LOGOUTMSG)
+
+
+def test_deletingallbooking_07(login):#checking whether clicking it checkall button deletes all the bookings
+    fw.clickingtheElement(driver,BOOKEDITENERYBTN)
+    fw.clickingtheElement(driver,CHECKALL)
+    fw.clickingtheElement(driver,CANCELBTN)
+    fw.alertOk(driver)
+
+def test_loggingout_08(login):#checking logout functionality
+    fw.clickingtheElement(driver, LOGOUTBTN)
+    fw.isElementPresent(driver, LOGOUTMSG)
+
 
 
 
