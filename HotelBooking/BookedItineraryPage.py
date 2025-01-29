@@ -7,6 +7,7 @@ LOGOUT="//input[@name='logout']"
 GO="//input[@name='search_hotel_id']"
 SEARCHRESULT="//label[@id='search_result_error']"
 LOGOUTMSG="//td[text()='You have successfully logged out. ']"
+CHECKALL="//input[@name='check_all']"
 
 
 
