@@ -1,9 +1,6 @@
-from select import select
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
-from selenium.webdriver.support.wait import WebDriverWait as wt
-from selenium.webdriver.support import expected_conditions as ec
 
 
 def launchingBrowser(name):
